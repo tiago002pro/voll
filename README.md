@@ -1,2 +1,2 @@
 # voll
-Studies on building the application in React-Nativemmmmmmmmmmmm.
+Studies on building the application in React-Native.
