@@ -1,62 +1,52 @@
 import { VStack, Image, Text, Box, FormControl, Input, Button, Link } from 'native-base';
 import { TouchableOpacity } from 'react-native';
 import Logo from './assets/Logo.png';
+import { Titulo } from './components/Titulo';
+import Botao from './components/Botao';
+import EntradaTexto from './components/EntradaTexto';
 
 export default function Login() {
   return (
     <VStack flex={1} alignItems="center" justifyContent='center' p={5}>
       <Image source={Logo} alt='Logo Voll' />
 
-      <Text 
-        fontSize="2xl"
-        fontWeight="bold"
-        color="gray.500"
-        textAlign="center"
-        mt={5}  
-      >
-        Faça login em sua conta
-      </Text>
-      <Box>
-        <FormControl mt={3}>
-          <FormControl.Label>Email</FormControl.Label>
-          <Input 
-            placeholder='Insira seu endereço de email'
-            size='lg'
-            w='100%'
-            borderRadius='lg'
-            bgColor='gray.100'
-            shadow={3}
-          />
-        </FormControl>
-        <FormControl mt={3}>
-          <FormControl.Label>Senha</FormControl.Label>
-          <Input 
-            placeholder='Insira sua senha'
-            size='lg'
-            w='100%'
-            borderRadius='lg'
-            bgColor='gray.100'
-            shadow={3}
-          />
-        </FormControl>
+      <Titulo>Faça login em sua conta</Titulo>
+      <Box mt={10}>
+        <EntradaTexto 
+          label='Email' 
+          placeholder='Insira seu endereço de email'>
+        </EntradaTexto>
+        <EntradaTexto 
+          label='Senha' 
+          placeholder='Insira sua senha'>
+        </EntradaTexto>
       </Box>
-      <Button
-        w='100%'
-        bg='blue.800'
-        mt={10}
-        borderRadius="lg"
-      >
-        Entrar
-      </Button>
+      <Botao>Entrar</Botao>
 
       <Link href='https://www.alura.com.br'>
-        Esqueceu sua senha?
+        <Text
+          fontSize="md"
+          color='blue.800'
+          textDecorationLine='underline'
+        >
+          Esqueceu sua senha?
+        </Text>
       </Link>
 
-      <Box w='100%' flexDirection='row' justifyContent='center'>
-        <Text>Ainda não tem cadastro? </Text>
+      <Box w='100%' flexDirection='row' justifyContent='center' mt={10}>
+        <Text 
+          fontSize="md"
+          color='gray.500'
+          mr={1}
+        >
+          Ainda não tem cadastro? 
+        </Text>
         <TouchableOpacity>
-          <Text color='blue.500'>
+          <Text
+            fontSize="md"
+            color='blue.500'
+            fontWeight='bold'
+          >
             Faça seu cadastro!
           </Text>
         </TouchableOpacity>
