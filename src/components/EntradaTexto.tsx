@@ -1,23 +1,23 @@
 import { Text, FormControl, Input } from 'native-base';
 
-export default function EntradaTexto({ ...children }) {
+interface InputProps {
+  label?: string;
+  placeholder: string;
+  secureTextEntry?: boolean;
+  leftIcon?: React.ReactNode;
+}
+
+export default function EntradaTexto({ label, placeholder, secureTextEntry = false}: InputProps): JSX.Element {
   return (
-    <FormControl mt={2}>
-      <FormControl.Label>
-      <Text
-        fontSize="md"
-        fontWeight="bold" 
-        color="gray.800"
-      >
-        {children.label}
-      </Text>
-      </FormControl.Label>
-      <Input 
-        placeholder={children.placeholder}
-        size='lg'
-        w='100%'
-        borderRadius='lg'
-        bgColor='gray.100'
+    <FormControl mt={3}>
+      {label && <FormControl.Label>{label}</FormControl.Label>}
+      <Input
+        placeholder={placeholder}
+        size="lg"
+        w="100%"
+        borderRadius="lg"
+        bgColor="gray.100"
+        secureTextEntry={secureTextEntry}
         shadow={3}
       />
     </FormControl>

@@ -1,18 +1,21 @@
 import { Text, Button, ITagProps } from 'native-base';
 import { ReactNode } from 'react';
 
-interface BotaoProps extends ITagProps {
-  children: ReactNode
+interface ButtonProps extends ITagProps {
+  children: ReactNode;
+  autoSize?: boolean;
+  color?: string;
 }
 
-export default function Botao({ children, ...rest }: BotaoProps) {
+export default function Botao({ children, autoSize = false, color, ...rest }: ButtonProps) {
   return (
     <Button
-      w='100%'
-      bg='blue.800'
+      w={autoSize ? 'auto' : '100%'}
+      bg={color || 'blue.800'}
       mt={10}
       mb={2}
       borderRadius="lg"
+      _text={{color: 'white'}}
       {...rest}
     >
       <Text

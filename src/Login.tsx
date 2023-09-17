@@ -1,4 +1,4 @@
-import { VStack, Image, Text, Box, FormControl, Input, Button, Link } from 'native-base';
+import { VStack, Image, Text, Box, Link } from 'native-base';
 import { TouchableOpacity } from 'react-native';
 import Logo from './assets/Logo.png';
 import { Titulo } from './components/Titulo';
