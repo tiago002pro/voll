@@ -19,6 +19,7 @@ export default function EntradaTexto({ label, placeholder, secureTextEntry = fal
         bgColor="gray.100"
         secureTextEntry={secureTextEntry}
         shadow={3}
+        // secureTextEntry={true}
       />
     </FormControl>
   )
